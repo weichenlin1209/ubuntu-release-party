@@ -79,6 +79,11 @@ level: 2
 
 ---
 transition: slide-up
+layout: image-right
+
+# Unix 家族演進
+image: ./img/2026-05-10-12-08-13.png
+backgroundSize: contain
 ---
 
 # 作業系統的歷史
@@ -95,6 +100,11 @@ transition: slide-up
 
 ---
 transition: slide-up
+layout: image-right
+
+# Unix 家族演進
+image: ./img/2026-05-10-12-08-13.png
+backgroundSize: contain
 ---
 
 # 作業系統的歷史
@@ -110,6 +120,11 @@ transition: slide-up
 
 ---
 transition: slide-up
+layout: image-right
+
+# Unix 家族演進
+image: ./img/2026-05-10-12-08-13.png
+backgroundSize: contain
 ---
 
 # 作業系統的歷史
@@ -121,6 +136,12 @@ transition: slide-up
   - 建立完全自由、與 UNIX 兼容的作業系統 → 直到 1980s 末已經完成各種工具 → 缺乏 Kernel
 
 ---
+layout: image-right
+
+# Unix 家族演進
+image: ./img/2026-05-10-12-08-13.png
+backgroundSize: contain
+---
 
 # 作業系統的歷史
 
@@ -131,11 +152,6 @@ transition: slide-up
 
 ---
 lauyout: center
----
-
-# 發展時序圖
-
-<img src="./img/2026-05-10-12-08-13.png" width="50%" alt="Uxix 家族歷史">
 ---
 
 # What is [Ubuntu](https://ubuntu.com)?
@@ -170,7 +186,7 @@ h1 {
 ---
 
 # 如何開始 Linux?
-- X 背下所有指令
+- X 記下所有指令
 - Ｏ 直接安裝，把電腦打扮成可愛小男娘
 
 ---
@@ -188,7 +204,7 @@ layout: two-cols-header
 
 <style>
 .two-cols-header {
-  column-gap: 20px; /* 根据需要调整间隙大小 */
+  column-gap: 20px;
 }
 </style>
 ---
@@ -226,6 +242,7 @@ layout: two-cols-header
 - DEB：Debian / Ubuntu 安裝檔
 - Snap：Ubuntu 官方推廣的跨版本套件
 - AppImage：免安裝可執行檔
+- flatpak
 - BIN / SH：手動執行安裝程式
 - 原始碼編譯：進階使用者方式
 
@@ -248,12 +265,54 @@ layout: two-cols-header
 
 ---
 
+## [flatpak](https://flatpak.org/setup/)
+
+```bash
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+---
+image: ./img/miku.webp
+layout: image-right
+backgroundSize: contain
+---
+
+## 來安裝酷酷的動態桌布！
+
+- 使用 [Hidamari](https://github.com/jeffshee/hidamari)
+- 文件建議 flatpak 用執行，flatpak 你在上一張投影片裝好了
+```
+flatpak install flathub io.github.jeffshee.Hidamari
+# 設定開機自啟動
+mkdir -p ~/.config/autostart
+
+cat > ~/.config/autostart/hidamari.desktop <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Hidamari
+Comment=Start Hidamari video wallpaper
+Exec=flatpak run io.github.jeffshee.Hidamari -b
+Terminal=false
+X-GNOME-Autostart-enabled=true
+EOF
+
+```
+---
+
+- 把影片預先放在 `~/Videos/Hidamari`  就可以選中播放，也可以設定隨機輪播
+- 
+
+![Hidamari UI](./img/2026-05-10-22-17-32.png)
+---
+
 # 輸入法
 我都用[小麥注音](https://github.com/openvanilla/fcitx5-mcbopomofo)
 
 - 需要自己編譯，參考[官方文件](https://github.com/openvanilla/fcitx5-mcbopomofo/blob/master/README.md#%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F)複製貼上
   - 別怕真的很簡單，複製貼上而已
-
+- 不想自己編譯可以安裝新酷音
 ---
 
 ## 什麼是「編譯」？
