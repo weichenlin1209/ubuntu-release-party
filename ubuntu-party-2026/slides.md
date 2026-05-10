@@ -22,6 +22,7 @@ transition: slide-left
 comark: true
 # duration of the presentation
 duration: 35min
+
 ---
 
 # Ubuntu release Party
@@ -93,6 +94,8 @@ transition: slide-up
   - 此時 UNIX 是使用 Assembly 撰寫
 
 ---
+transition: slide-up
+---
 
 # 作業系統的歷史
 
@@ -105,6 +108,8 @@ transition: slide-up
   - UC Berkeley 獲得 UNIX 原始碼 → 大幅改進 UNIX → 發行 BSD
   - BSD 成為學術界主流使用與研究對象
 
+---
+transition: slide-up
 ---
 
 # 作業系統的歷史
@@ -143,12 +148,11 @@ lauyout: center
 - 有穩定的更新週期
 - 社群資源多
   - [askUbuntu](https://askubuntu.com)、[Ubuntu 台灣](https://www.facebook.com/ubuntu.tw/)
-- 對開發者友善
-
-
 <div class="text-sm opacity-60 mt-8">
 比較對象是其他 Linux 發行版
 </div>
+
+
 
 
 <style>
@@ -170,19 +174,41 @@ h1 {
 - Ｏ 直接安裝，把電腦打扮成可愛小男娘
 
 ---
+layout: two-cols-header
+---
 
-# GUI
+# Graphical User Interface, GUI
+- 點點按按
+::left::
+![mac OS deskto](./img/2026-05-10-18-42-42.png)
 
-![kde](img/2026-05-10-13-17-03.png)
+::right::
+
+![](./img/2026-05-10-18-45-54.png)
+
+<style>
+.two-cols-header {
+  column-gap: 20px; /* 根据需要调整间隙大小 */
+}
+</style>
+---
+layout: two-cols-header
+---
+
+## Graphical User Interface, GUI on Linux
+::left::
+::right::
+
+![Linux kde](./img/2026-05-10-13-17-03.png)
 
 ---
 
 # Linux 常見的桌面環境
 - GNONE
 - KDE
+- xfce
 - i3
 - hyperland
-- xfce
 ---
 
 # 我接觸 Linux 的經驗
@@ -220,6 +246,38 @@ h1 {
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
+---
+
+# 輸入法
+我都用[小麥注音](https://github.com/openvanilla/fcitx5-mcbopomofo)
+
+- 需要自己編譯，參考[官方文件](https://github.com/openvanilla/fcitx5-mcbopomofo/blob/master/README.md#%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F)複製貼上
+  - 別怕真的很簡單，複製貼上而已
+
+---
+
+## 什麼是「編譯」？
+
+
+![compile](./img/2026-05-10-18-56-08.png)
+
+---
+# Setup
+
+```bash
+git clone https://github.com/openvanilla/fcitx5-mcbopomofo.git
+cd fcitx5-mcbopomofo
+sudo apt install \
+    pkg-config fcitx5 libfcitx5core-dev libfcitx5config-dev libfcitx5utils-dev fcitx5-modules-dev \
+    cmake extra-cmake-modules gettext libfmt-dev libicu-dev libjson-c-dev
+
+cmake -B build -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+sudo cmake --install build
+
+# 初次安裝後，執行以下指令，小麥注音 icon 就會出現在 fcitx5 選單中
+sudo update-icon-caches /usr/share/icons/*
+```
 
 ---
 
@@ -248,4 +306,4 @@ layout: intro
 
 # 參考資料（看不完的那種）
 - text book : UNIX The Textbook, Third Edition | By Syed Mansoor Sarwar, Robert M. Koretsky
-- 
+- Computer Systems A Programmer’s Perspective THIRD EDITION : The compilation system
