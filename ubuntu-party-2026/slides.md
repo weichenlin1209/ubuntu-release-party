@@ -15,8 +15,6 @@ comark: true
 中興應數 林煒宸 Windson
 
 ---
-layout: image-right
-image: 
 transition: slide-left
 ---
 
@@ -25,8 +23,8 @@ transition: slide-left
 - 長虹吉他社 50th 教學、51st 副社長
 - 用 Linux 的一般人
 
-> email: info AT windson.cc <br>
-> blog: www.windson.cc
+> email: [info AT windson.cc](mailto:info@windson.cc) <br/>
+> blog: [www.windson.cc](https://www.windson.cc)
 
 <style>
 blockquote {
@@ -40,20 +38,13 @@ transition: slide-up
 首先要下載作業系統的 ISO 檔。今天我們要灌的是 [Ubuntu 26.04](https://releases.ubuntu.com/26.04/)，已經幫各位下載下來了。
 
 ## Linux
-- 方法一 (`dd`)
-  - 一個一個區塊(bits 尺度)複製過去
 ```bash
 sudo dd if=/path/to/iso of=/path/to/device bs=4M status=progress
 ```
 
-- 方法二 (`rsync`)
-  - 一個一個檔案搬過去
-  - 可以改內容
-  - 超麻煩，有興趣的人參考[這篇文章](https://www.windson.cc/zh/posts/live-usb-2/)
-
 <style>
-li {
-  margin-top: 15px
+h2 {
+  margin-bottom: 50px;
 }
 </style>
 ---
@@ -90,10 +81,41 @@ li {
 </style>
 ---
 layout: cover
-transition: slide-left
+transition: slide-up
 ---
 # Wait A Half Hour
 
+---
+transition: slide-up
+---
+# 製作持久化開機碟
+<div class="persistence-usb">
+<li v-click="1">
+  一般的開機碟沒有儲存功能
+</li>
+<li v-click="2">
+  持久化開機碟 -> 有儲存功能
+</li>
+<li v-click="3">
+  帶著走的行動電腦
+</li>
+</div>
+
+<img src="./img/usb.svg" class=mx-auto v-click="4">
+
+<style>
+img {
+  height: 300px;
+  width: auto;
+  margin-top: 15px;
+}
+.persistence-usb {
+  li{
+    margin-top: 20px;
+  }
+
+}
+</style>
 ---
 layout: cover
 transition: slide-up
@@ -108,7 +130,7 @@ transition: slide-up
 <div class="memory-item">
   <img src="./img/123.png" alt="Windows Memory">
   <div v-click="1">
-    <span class="memory-label">68%</span>
+    <span class="memory-label">67%</span>
   </div>
 </div>
 
@@ -174,7 +196,7 @@ font-size: 1.2rem;
 layout: cover
 transition: slide-up
 ---
-# 記憶體用量大會怎樣？
+# 記憶體佔用大會怎樣？
 ---
 layout: image-right
 image: ./img/windows-update.png
@@ -191,7 +213,18 @@ li {
   margin-top: 25px;
 }
 </style>
+---
+transition: slide-up
+---
+## 系統更新 (Linux)
 
+<img src="./img/linux-update.png" class=mx-auto>
+
+<style>
+img {
+  margin-top: 50px;
+}
+</style>
 ---
 layout: cover
 transition: slide-left
