@@ -36,15 +36,78 @@ blockquote {
 ---
 transition: slide-up
 ---
+# 製作開機碟
+首先要下載作業系統的 ISO 檔。今天我們要灌的是 [Ubuntu 26.04](https://releases.ubuntu.com/26.04/)，已經幫各位下載下來了。
 
-# Windows v.s Linux
+## Linux
+- 方法一 (`dd`)
+  - 一個一個區塊(bits 尺度)複製過去
+```bash
+sudo dd if=/path/to/iso of=/path/to/device bs=4M status=progress
+```
 
-## 記憶體用量 (Windows)
+- 方法二 (`rsync`)
+  - 一個一個檔案搬過去
+  - 可以改內容
+  - 超麻煩，有興趣的人參考[這篇文章](https://www.windson.cc/zh/posts/live-usb-2/)
+
+<style>
+li {
+  margin-top: 15px
+}
+</style>
+---
+transition: slide-up
+---
+## Windows
+
+使用 [Rufus](https://rufus.ie/en/#download)
+
+<img src="./img/rufus_cover.png" class="mx-auto">
+
+<style>
+img {
+  height: 400px;
+  width: 
+} 
+</style>
+
+---
+layout: image-right
+image: ./img/rufus.png
+transition: slide-up
+---
+
+## Rufus
+1. 裝置：找到你的USB（他會自己找到 or 比對儲存空間大小）
+2. 開機模式：ubuntu-26.04-desktop-amd64.iso
+3. 資料分割配置：GPT
+
+<style>
+li {
+  margin-top: 20px;
+}
+</style>
+---
+layout: cover
+transition: slide-left
+---
+# Wait A Half Hour
+
+---
+layout: cover
+transition: slide-up
+---
+# Why use Linux ?
+---
+transition: slide-up
+---
+## 閒置時記憶體用量 (Windows)
 
  
 <div class="memory-item">
   <img src="./img/123.png" alt="Windows Memory">
-  <div v-click="2">
+  <div v-click="1">
     <span class="memory-label">68%</span>
   </div>
 </div>
@@ -66,7 +129,7 @@ transition: slide-up
 }
 
 .memory-label {
-font-size: 1.2rem;
+  font-size: 1.2rem;
   font-family: monospace;
   font-weight: bold;
   color: #ffffff;
@@ -76,11 +139,11 @@ font-size: 1.2rem;
 transition: slide-up
 ---
 
-## 記憶體用量 (Linux)
+## 閒置時記憶體用量 (Linux)
 <div class="memory-item">
   <img src="./img/mint-memory.png" alt="Mint Memory">
   <div v-click="1">
-    <span class="memory-label">12.6%</span>
+    <span class="memory-label">16.7%</span>
   </div>
 </div>
  
@@ -94,7 +157,7 @@ transition: slide-up
 }
 
 .memory-item img {
-  width: 600px;
+  width: 550px;
   height: auto;
   display: flex;
 }
@@ -108,27 +171,126 @@ font-size: 1.2rem;
 </style>
 
 ---
-transition: slide-left
+layout: cover
+transition: slide-up
+---
+# 記憶體用量大會怎樣？
+---
+layout: image-right
+image: ./img/windows-update.png
+transition: slide-up
 ---
 
-- ## 更新問題
-<div v-click="1">
-  <img src="./img/windows-update.png" class="mx-auto">
-</div>
-
+## 系統更新 (Windows)
+- 微軟叫更新，你只能聽話
+- 強迫更新之後硬體跟不上
+- [KCCI-TV 氣象播報中斷事件](https://www.youtube.com/watch?v=WumCZLTpfKw)
+- [2024年CrowdStrike大規模藍白畫面事件](https://zh.wikipedia.org/zh-tw/2024%E5%B9%B4CrowdStrike%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%93%9D%E5%B1%8F%E4%BA%8B%E4%BB%B6)
 <style>
-img {
-  margin-top: 20px;
-  width: 650px;
-  height: 550x;
+li {
+  margin-top: 25px;
 }
 </style>
+
+---
+layout: cover
+transition: slide-left
+---
+# 你的電腦不是你的電腦
 
 ---
 layout: cover
 transition: slide-up
 ---
 # Let's use Linux
+
+---
+transition: slide-up
+---
+
+# Linux 小知識
+## 帳號管理
+<div class="account-intro">
+  <img src="./img/v_bird_account.jpg" class="mx-auto">
+  <span>
+    <a herf="https://linux.vbird.org/linux_basic/centos7/0210filepermission.php">鳥哥私房菜 圖5.1.1</a>
+  </span>
+</div>
+
+<style>
+.account-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+</style>
+
+---
+transition: slide-up
+---
+## 檔案權限
+
+- `r` : Read （讀檔）
+- `w` : Write （寫檔）
+- `x`：execute（執行）
+
+<div class="account-intro">
+  <img src="./img/vbird_5.2.1.gif" ">
+  <span>
+    <a herf="https://linux.vbird.org/linux_basic/centos7/0210filepermission.php">鳥哥私房菜 圖5.1.1</a>
+  </span>
+</div>
+
+<style>
+li {
+  margin-top: 15px;
+}
+.account-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 50px;
+}
+</style>
+
+---
+layout: center 
+transition: slide-up
+---
+# Linux 怎麼玩遊戲？
+
+<img v-click="1" src="./img/steam.jpg">
+
+<style>
+img {
+  margin-top: 30px;
+  height: 400px;
+  width: auto;
+}
+</style>
+
+---
+layout: image-right
+image: ./img/proton.png
+transition: slide-up
+---
+# Steam
+- [下載 .deb 檔](https://store.steampowered.com/about/)
+```bash
+sudo dpkg -i steam_latest.deb
+```
+
+在 Steam 中下載 Proton 後，大部分的遊戲都可以執行。如果不是 Steam 內的遊戲也可以匯入。
+
+---
+layout: cover
+transition: slide-up
+---
+# Let's try Linux
+
 ---
 layout: two-cols-header
 transition: slide-up
@@ -142,6 +304,9 @@ transition: slide-up
 
 > **可以在這邊設定要用哪個硬碟開機！**
 
+- 進入 BIOS/UEFI
+各廠牌進入的按鍵都不太一樣。請各位自行搜尋，已知：
+  - ASUS, Acer, MSI: `F2` and `Del`
 ::right::
 <img src="./img/bios.jpg" class="mx-auto">
 <style>
@@ -154,72 +319,26 @@ img {
 blockquote {
   margin-top: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 </style>
 ---
+layout: center
 transition: slide-up
 ---
-# 製作開機碟
-首先要下載作業系統的 ISO 檔。今天我們要灌的是 [Ubuntu 26.04](https://releases.ubuntu.com/26.04/)，已經幫各位下載下來了。
-
-## Linux
-- 方法一 (`dd`)
-  - 一個一個區塊(bits 尺度)複製過去
-```bash
-sudo dd if=/path/to/iso of=/path/to/device bs=4M status=progress
-```
-- 方法二 (`rsync`)
-  - 一個一個檔案搬過去
-  - 可以改內容
-  - 超麻煩，有興趣的人參考[這篇文章](https://www.windson.cc/zh/posts/live-usb-2/)
+<img src="./img/boot.jpg" class="mx-auto">
+<p>調整開機順序，把 USB 調到最前面，並關閉 Secure Boot</p>
 
 <style>
-li {
-  margin-top: 15px
+p{
+  margin-left: 100px;
 }
-</style>
----
-transition: slide-up
----
-## Windows
 
-使用 [Rufus](https://rufus.ie/en/#download)
-
-<img src="./img/rufus.png" class="mx-auto">
-
-<style>
 img {
-  height: 400px;
-  width: 
-} 
-</style>
-
----
-layout: image-right
-image: ./img/rufus.png
-transition: slide-up
----
-
-## Rufus
-1. 裝置：找到你的USB（他會自己找到 or 看一下儲存空間）
-2. 開機模式：ubuntu-26.04-desktop-amd64.iso
-3. 固定磁區大小：拉到底（這個決定你的儲存空間）
-4. 資料分割配置：GPT
-
-<style>
-li {
-  margin-top: 20px;
+  height: 500px;
+  width: auto;
 }
 </style>
 ---
-layout: cover
-transition: slide-left
----
-# Wait An Hour
----
-transition:slide-up
----
-# Linux 小知識
-## 帳號管理
 
 
