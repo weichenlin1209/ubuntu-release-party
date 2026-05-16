@@ -12,93 +12,199 @@ comark: true
 
 # Ubuntu Release Party
 
-報告人：中興應數 林煒宸 Windson
+中興應數 林煒宸 Windson
 
 ---
+layout: image-right
+image: 
 transition: slide-left
 ---
 
 # WHOAMI
-
-- 中興大學 長虹吉他社 50th 教學、51st 副社長
+- 應數二 林煒宸
+- 長虹吉他社 50th 教學、51st 副社長
 - 用 Linux 的一般人
 
 > email: info AT windson.cc <br>
 > blog: www.windson.cc
 
----
-transition: slide-up
----
-
-# 比較 Windows ＆ Linux
-
-- ## 記憶體用量
-
-<div class="memory-container">
-  <div class="memory-item">
-    <img src="./img/mint-memory.png" alt="Mint Memory">
-    <div v-click="1">
-      <span class="memory-label">12.6%</span>
-    </div>
-  </div>
-  
-  <div class="memory-item">
-    <img src="./img/windows-memory.png" alt="Windows Memory">
-    <div v-click="2">
-      <span class="memory-label">68%</span>
-    </div>
-  </div>
-</div>
-
-
 <style>
-.memory-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 50px;
-  margin-right: 20px; 
-}
-
-/* 將容器設為 Flexbox 並垂直排列子元素 */
-.memory-item {
-  display: flex;
-  flex-direction: column; /* 垂直排列：圖片在上，文字在下 */
-  align-items: center;    /* 於交錯軸 (Cross Axis) 置中對齊 */
-  gap: 8px;               /* 控制圖片與文字之間的間距 */
-}
-
-.memory-item img {
-  width: 450px;
-  height: auto;
-  display: flex;
-}
-
-/* 移除 position: absolute，保留文字排版設定 */
-.memory-label {
-font-size: 1.2rem;
-  font-family: monospace;
-  font-weight: bold;
-  color: #ffffff; /* 配合淺色背景調整為深色文字 */
+blockquote {
+  margin-top: 20px;
 }
 </style>
 ---
 transition: slide-up
 ---
 
+# Windows v.s Linux
 
-- ## 更新
+## 記憶體用量
+
+ 
+<div class="memory-item">
+  <img src="./img/123.png" alt="Windows Memory">
+  <div v-click="2">
+    <span class="memory-label">68%</span>
+  </div>
+</div>
+
+
+<style>
+.memory-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.memory-item img {
+  width: 600px;
+  height: auto;
+  display: flex;
+}
+
+.memory-label {
+font-size: 1.2rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: #ffffff;
+}
+</style>
+---
+transition: slide-up
+---
+
+## 記憶體用量
+<div class="memory-item">
+  <img src="./img/mint-memory.png" alt="Mint Memory">
+  <div v-click="1">
+    <span class="memory-label">12.6%</span>
+  </div>
+</div>
+ 
+<style>
+.memory-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.memory-item img {
+  width: 600px;
+  height: auto;
+  display: flex;
+}
+
+.memory-label {
+font-size: 1.2rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: #ffffff;
+}
+</style>
+
+---
+transition: slide-left
+---
+
+- ## 更新問題
 <div v-click="1">
   <img src="./img/windows-update.png" class="mx-auto">
 </div>
 
 <style>
 img {
-  margin-top: 60px;
-  width: 500px;
-  height: auto;
-
+  margin-top: 20px;
+  width: 650px;
+  height: 550x;
 }
 </style>
 
+---
+layout: cover
+transition: slide-up
+---
+# Let's use Linux
+---
+layout: two-cols-header
+transition: slide-up
+---
+::left::
+# 電腦怎麼開機？
+## BIOS / UEFI
+- BIOS: Basic Input/Output System
+- UEFI: Unified Extensible Firmware Interface
+- 電腦啟動時第一個載入的軟體
+
+> **可以在這邊設定要用哪個硬碟開機！**
+
+::right::
+<img src="./img/bios.jpg" class="mx-auto">
+<style>
+h2 {
+  margin-bottom:20px;
+}
+img {
+  margin-top: 100px;
+}
+blockquote {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+</style>
+---
+transition: slide-up
+---
+# 製作開機碟
+首先要下載作業系統的 ISO 檔。今天我們要灌的是 [Ubuntu 26.04](https://releases.ubuntu.com/26.04/)，已經幫各位下載下來了。
+
+## Linux
+- 方法一 (`dd`)
+  - 一個一個區塊(bits 尺度)複製過去
+```bash
+sudo dd if=/path/to/iso of=/path/to/device bs=4M status=progress
+```
+- 方法二 (`rsync`)
+  - 一個一個檔案搬過去
+  - 可以改內容
+  - 超麻煩，有興趣的人參考[這篇文章](https://www.windson.cc/zh/posts/live-usb-2/)
+
+<style>
+li {
+  margin-top: 15px
+}
+</style>
+---
+transition: slide-up
+---
+## Windows
+
+下載 [Rufus](https://rufus.ie/en/#download)
 
 
+
+---
+layout: two-cols-header
+transition: slide-up
+---
+# Linux 怎麼玩遊戲？
+
+::left::
+<img v-click="1" src="./img/steam.jpg" >
+
+::right::
+<img v-click="2" src="./img/minecraft.jpg" >
+ 
+<style>
+.two-cols-header {
+  column-gap: 20px;
+}
+
+img {
+  margin-top: 60px;
+}
+</style>
