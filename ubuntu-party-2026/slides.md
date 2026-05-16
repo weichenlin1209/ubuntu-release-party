@@ -39,7 +39,7 @@ transition: slide-up
 
 # Windows v.s Linux
 
-## 記憶體用量
+## 記憶體用量 (Windows)
 
  
 <div class="memory-item">
@@ -76,7 +76,7 @@ font-size: 1.2rem;
 transition: slide-up
 ---
 
-## 記憶體用量
+## 記憶體用量 (Linux)
 <div class="memory-item">
   <img src="./img/mint-memory.png" alt="Mint Memory">
   <div v-click="1">
@@ -183,28 +183,43 @@ transition: slide-up
 ---
 ## Windows
 
-下載 [Rufus](https://rufus.ie/en/#download)
+使用 [Rufus](https://rufus.ie/en/#download)
 
+<img src="./img/rufus.png" class="mx-auto">
 
+<style>
+img {
+  height: 400px;
+  width: 
+} 
+</style>
 
 ---
-layout: two-cols-header
+layout: image-right
+image: ./img/rufus.png
 transition: slide-up
 ---
-# Linux 怎麼玩遊戲？
 
-::left::
-<img v-click="1" src="./img/steam.jpg" >
+## Rufus
+1. 裝置：找到你的USB（他會自己找到 or 看一下儲存空間）
+2. 開機模式：ubuntu-26.04-desktop-amd64.iso
+3. 固定磁區大小：拉到底（這個決定你的儲存空間）
+4. 資料分割配置：GPT
 
-::right::
-<img v-click="2" src="./img/minecraft.jpg" >
- 
 <style>
-.two-cols-header {
-  column-gap: 20px;
-}
-
-img {
-  margin-top: 60px;
+li {
+  margin-top: 20px;
 }
 </style>
+---
+layout: cover
+transition: slide-left
+---
+# Wait An Hour
+---
+transition:slide-up
+---
+# Linux 小知識
+## 帳號管理
+
+
