@@ -204,9 +204,10 @@ transition: slide-up
 ---
 
 ## 系統更新 (Windows)
-- 微軟叫更新，你只能聽話
+- 微軟說更新，你只能聽話
 - 強迫更新之後硬體跟不上
 - [KCCI-TV 氣象播報中斷事件](https://www.youtube.com/watch?v=WumCZLTpfKw)
+- [Windows 10 Version 1809 檔案刪除事件](https://www.ithome.com.tw/news/126308)
 - [2024年CrowdStrike大規模藍白畫面事件](https://zh.wikipedia.org/zh-tw/2024%E5%B9%B4CrowdStrike%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%93%9D%E5%B1%8F%E4%BA%8B%E4%BB%B6)
 <style>
 li {
