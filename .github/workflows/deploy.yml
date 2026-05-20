@@ -40,7 +40,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Slidev
-        run: pnpm slidev build --base /ubnparty2026/
+        run: pnpm slidev build --base /ubuntu-release-party-2026/
 
       - name: Deploy to my repo
         uses: peaceiris/actions-gh-pages@v4
@@ -48,4 +48,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ubuntu-party-2026/dist
-          destination_dir: ubnparty2026
