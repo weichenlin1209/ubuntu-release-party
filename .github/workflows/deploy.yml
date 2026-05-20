@@ -5,9 +5,15 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 關鍵點 1：明確宣告此工作流對目前的儲存庫具有寫入權限
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     defaults:
       run:
@@ -36,11 +42,10 @@ jobs:
       - name: Build Slidev
         run: pnpm slidev build --base /ubnparty2026/
 
-      - name: Deploy to main repo
+      - name: Deploy to my repo
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          external_repository: iach526526/ubuntu-release-party-2026
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ubuntu-party-2026/dist
           destination_dir: ubnparty2026
